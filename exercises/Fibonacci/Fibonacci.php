@@ -14,4 +14,17 @@ namespace Exercises\Fibonacci;
  */
 final class Fibonacci
 {
+  public static function get(int $index): int
+  {
+    $fib = [];
+    for($i = 0; $i <= $index; ++$i) {
+      if ($i <= 1) {
+        $fib[] = $i;
+      } else {
+        $fib[] = $fib[$i - 1] + $fib[$i - 2];
+      }
+    }
+
+    return $fib[$index];
+  }
 }
