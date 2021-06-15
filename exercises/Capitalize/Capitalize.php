@@ -13,4 +13,17 @@ namespace Exercises\Capitalize;
  */
 final class Capitalize
 {
+  public static function get(string $string) : string
+  {
+    return ucwords($string);
+  }
+
+  public static function getAlt(string $string) : string
+  {
+    $words = array_map(function ($word) {
+      return strtoupper($word[0]) . substr($word, 1);
+    }, explode(' ', $string));
+
+    return implode(' ', $words);
+  }
 }
