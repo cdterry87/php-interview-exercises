@@ -15,4 +15,20 @@ namespace Exercises\ArrayGroup;
  */
 final class ArrayGroup
 {
+  public static function groupAlt($array, $size)
+  {
+    return array_chunk($array, $size);
+  }
+  
+  public static function group($array, $size)
+  {
+    $result = [];
+    $max = count($array);
+
+    for($i = 0; $i < $max; $i += $size){
+      $result[] = array_slice($array, $i, $size);
+    }
+
+    return $result;
+  }
 }
