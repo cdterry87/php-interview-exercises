@@ -19,4 +19,15 @@ namespace Exercises\Reverse;
  */
 final class Reverse
 {
+  public static function int($int)
+  {
+    $sign = $int <=> 0;
+    $number = (string) abs($int);
+    return (int) implode(array_reverse(str_split($number))) * $sign;
+  }
+
+  public static function string($string)
+  {
+    return implode(array_reverse(str_split($string)));
+  }
 }
