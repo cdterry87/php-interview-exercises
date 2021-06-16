@@ -13,4 +13,11 @@ namespace Exercises\MaxChar;
  */
 final class MaxChar
 {
+  public static function get(string $string) : string
+  {
+    $array = str_split($string);
+    $counts = array_count_values($array);
+
+    return (string) array_search(max($counts), $counts);
+  }
 }
