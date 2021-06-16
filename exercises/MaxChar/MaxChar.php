@@ -15,9 +15,7 @@ final class MaxChar
 {
   public static function get(string $string) : string
   {
-    $array = str_split($string);
-    $counts = array_count_values($array);
-
+    $counts = array_count_values(str_split($string));
     return (string) array_search(max($counts), $counts);
   }
 }
