@@ -13,4 +13,11 @@ namespace Exercises\Vowels;
  */
 final class Vowels
 {
+  public static function count(string $string): int
+  {
+    $vowels = ['a', 'e', 'i', 'o', 'u'];
+    $array = str_split(strtolower($string));
+
+    return count(array_intersect($array, $vowels));
+  }
 }
