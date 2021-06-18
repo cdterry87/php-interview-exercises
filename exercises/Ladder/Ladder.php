@@ -14,4 +14,10 @@ namespace Exercises\Ladder;
  */
 final class Ladder
 {
+  public static function print(int $level): void
+  {
+    for($i = 1; $i <= $level; ++$i){
+      print str_pad(str_repeat('#', $i), $level);
+    }
+  }
 }
